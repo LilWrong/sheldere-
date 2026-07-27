@@ -6,7 +6,7 @@ on:
       - feature
 
 jobs:
-  run-script:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,5 +16,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run script
-        run: python hello.py
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Run tests
+        run: pytest hello.py
